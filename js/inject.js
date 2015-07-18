@@ -20,17 +20,18 @@ $(document.body).ready(function() {
             }
         };
 
-        $('.form-control#author').keypress(function(event){
+        var authorForm = $('.form-control#author');
+        authorForm.keypress(function(event){
             typedName = event.currentTarget.value + String.fromCharCode(event.keyCode);
-            console.log(typedName + " press");
+            //console.log(typedName + " press");
             refreshAnswerBoxes();
         });
 
-        $('.form-control#author').keyup(function(event){
+        authorForm.keyup(function(event){
             if (event.keyCode == 8) {
                 //typedName = typedName.split(typedName[typedName.length-1])[0];
                 typedName = event.currentTarget.value;
-                console.log(typedName + " down");
+                //console.log(typedName + " down");
                 refreshAnswerBoxes();
             }
         });
