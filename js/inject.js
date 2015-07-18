@@ -1,3 +1,6 @@
+var PIC_REGEX = /(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*\.(?:jpg|gif|png))(?:\?([^#]*))?(?:#(.*))?/;
+//Regex to be used for anyone with more patience than me.
+
 var onHead = function() {
     $(document.head).ready(function() {
         //Add RS Modified
