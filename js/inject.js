@@ -4,7 +4,7 @@ var onHead = function() {
         $(document.head).append("<link rel='stylesheet' href=\"" + chrome.extension.getURL('/css/retrospring-modified.css') + "\"/>");
     });
 };
-var onBody = function () {
+var pageDependents = function () {
     $(document.body).ready(function() {
         if (location.href.indexOf("inbox") >= 0) {
             var typedName = "";
@@ -43,8 +43,7 @@ var onBody = function () {
 
 /* Loads on page change - required because of Rails partials */
 var onload = function() {
-    onHead();
-    onBody();
+    pageDependents();
 };
 
 $(document).on('page:load' ,function() {
@@ -52,6 +51,7 @@ $(document).on('page:load' ,function() {
 });
 
 // Runs for first page load
+onHead();
 onload();
 
 /* End of on load stuffs */
