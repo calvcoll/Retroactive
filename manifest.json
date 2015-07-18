@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Retroactive",
+  "description": "Additions to Retrospring",
+  "version": "0.1.0",
+
+  "permissions" : [
+    "tabs",
+    "storage",
+    "*://*.retrospring.com/*"
+  ],
+  "content_scripts": [{
+      "matches" : ["*://*.retrospring.net/*"],
+      "js" : ["js/jquery.min.js", "js/inject.js"]
+  }],
+  "web_accessible_resources": [
+  ]
+}
