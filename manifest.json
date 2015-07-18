@@ -5,6 +5,10 @@
   "description": "Additions to Retrospring",
   "version": "0.1.0",
 
+  "icons" : {
+    "48": "img/retroactive-48.png",
+    "128": "img/retroactive-128.png"
+  },
   "permissions" : [
     "tabs",
     "storage",
