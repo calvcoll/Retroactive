@@ -12,7 +12,7 @@
   "permissions" : [
     "tabs",
     "storage",
-    "*://*.retrospring.com/*"
+    "*://*.retrospring.net/*"
   ],
   "content_scripts": [{
       "matches" : ["*://*.retrospring.net/*"],
