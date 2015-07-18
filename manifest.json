@@ -19,5 +19,6 @@
       "js" : ["js/jquery.min.js", "js/inject.js"]
   }],
   "web_accessible_resources": [
+    "css/*.css"
   ]
 }
