@@ -1,14 +1,11 @@
 var onHead = function() {
     $(document.head).ready(function() {
         //Add RS Modified
-        console.log("My head is ready " + location.href);
         $(document.head).append("<link rel='stylesheet' href=\"" + chrome.extension.getURL('/css/retrospring-modified.css') + "\"/>");
     });
 };
 var onBody = function () {
     $(document.body).ready(function() {
-        console.log("My body is ready " + location.href);
-
         if (location.href.indexOf("inbox") >= 0) {
             var typedName = "";
             var refreshAnswerBoxes = function() {
