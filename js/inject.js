@@ -4,7 +4,15 @@ var PIC_REGEX = /(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*\.(?:jpg|gif|png))(?:\
 var onHead = function() {
     $(document.head).ready(function() {
         //Add RS Modified
-        $(document.head).append("<link rel='stylesheet' href=\"" + chrome.extension.getURL('/css/retrospring-modified.css') + "\"/>");
+        //$(document.head).append("<link rel='stylesheet' href=\"" + chrome.extension.getURL('/css/retrospring-modified.css') + "\"/>");
+        $.get('https://userstyles.org/styles/116582/retrospring-modified.css').done(function(data){
+            if (data.indexOf('@-moz-document') >= 0) {
+                var index = data.indexOf('{');
+                data = data.substring(index + 1, data.length-1);
+            }
+            var style = "<style class=\"Retroactive Retrospring-Modified\">" + data + "</style>";
+            $(document.head).append(style);
+        })
     });
 };
 var pageDependents = function () {
